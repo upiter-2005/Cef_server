@@ -39,7 +39,7 @@ const sendMail = async (req, res) => {
 };
 const sendMailPartner = async (req, res) => {
   try {
-    const { name, phone, email, nick } = req.body;
+    const { name, phone, product } = req.body;
     const transporter = nodemailer.createTransport({
       port: 587, // true for 465, false for other ports
       host: "smtp.gmail.com",
@@ -54,10 +54,10 @@ const sendMailPartner = async (req, res) => {
     });
 
     const mailOptions = {
-      from: "sic volo <vetolgold@gmail.com>",
-      to: "vetolgold@gmail.com",
+      from: "Cef Lab <pavel470245@gmail.com>",
+      to: "pavel470245@gmail.com, sef.lab.sales@gmail.com",
       subject: "Sic Volo Form request",
-      html: `Name: ${name} <br> Phone: ${phone} <br> Mail: ${email} <br> Nickname: ${nick}`,
+      html: `Name: ${name} <br> Phone: ${phone} <br> Product: ${product} `,
       //text: `Mail sending`,
     };
 
