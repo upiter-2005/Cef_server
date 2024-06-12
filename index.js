@@ -3,7 +3,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 
-
 const productsRoutes = require("./routs/productsRoutes.js");
 const customersRoutes = require("./routs/customersRoutes.js");
 const orderRoutes = require("./routs/orderRoutes.js");
@@ -13,13 +12,11 @@ const liqpayRoutes = require("./routs/liqpayRoutes.js");
 
 const app = express();
 dotenv.config();
-
+console.log("fefef");
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
 app.use(express.static("uploads"));
-
-
 
 app.use("/api/products", productsRoutes);
 app.use("/api/customers", customersRoutes);
@@ -30,7 +27,7 @@ app.use("/api/pay", liqpayRoutes);
 
 const PORT = 5000;
 
- // "dev": "nodemon index.js"
+// "dev": "nodemon index.js"
 
 const start = async () => {
   try {
@@ -46,4 +43,4 @@ const start = async () => {
 };
 
 start();
- // "proxy" : "http://localhost:5000",   --- for packcge.json
+// "proxy" : "http://localhost:5000",   --- for packcge.json
