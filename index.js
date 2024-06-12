@@ -12,7 +12,7 @@ const liqpayRoutes = require("./routs/liqpayRoutes.js");
 
 const app = express();
 dotenv.config();
-console.log("fefef");
+
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
